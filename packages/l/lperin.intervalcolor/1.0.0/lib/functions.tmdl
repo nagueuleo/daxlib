@@ -1,31 +1,19 @@
-/// Lionel.KPI.MonthColor
+/// lperin.intervalcolor
 /// Version       : 1.0.0
 /// Description   : Returns green for maximum, red for minimum and blue otherwise
-function 'Lionel.KPI.MonthColor' =
+function 'lperin.intervalcolor.LineColor' =
         (
-            ValueKPI: NUMERIC
+            ValueKPI: NUMERIC,
+            MinKPI: NUMERIC,
+            MaxKPI: NUMERIC
         )
         =>
 
         VAR is_max =
-            MAXX(
-                ALLSELECTED(
-                    'DATE'[Année],
-                    'DATE'[mois],
-                    'DATE'[Mois_num]
-                ),
-                ValueKPI
-            ) = ValueKPI
+            ValueKPI = MaxKPI
 
         VAR is_min =
-            MINX(
-                ALLSELECTED(
-                    'DATE'[Année],
-                    'DATE'[mois],
-                    'DATE'[Mois_num]
-                ),
-                ValueKPI
-            ) = ValueKPI
+            ValueKPI = MinKPI
 
         VAR Result =
             SWITCH(
@@ -38,6 +26,7 @@ function 'Lionel.KPI.MonthColor' =
         RETURN
             Result
 
-    annotation DAXLIB_PackageId = Lionel.KPI
+    annotation DAXLIB_PackageId = lperin.intervalcolor
 
     annotation DAXLIB_PackageVersion = 1.0.0
+

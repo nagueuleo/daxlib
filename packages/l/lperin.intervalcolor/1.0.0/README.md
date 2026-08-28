@@ -1,4 +1,4 @@
-# Nagueu.KPI.MonthColor
+# lperin.intervalcolor.LineColor
 
 **Version:** 1.0.0
 
@@ -18,9 +18,30 @@ This makes it easy to visually highlight the best and worst KPI values directly 
 
 Use the function as a **conditional formatting / color measure** for the chart.
 
+
+- create your measure 
+Valeur KPI =
+SUM('VENTES'[Montant])
+
+- Create the minimum nad maximum like 
+if your axis is the date the make two kpi Min KPI and max KPI
+Min KPI =
+MINX(
+    ALLSELECTED('DATE'[Mois]),
+    CALCULATE([Valeur KPI])
+)
+Max KPI =
+MAXX(
+    ALLSELECTED('DATE'[Mois]),
+    CALCULATE([Valeur KPI])
+)
+- Call the function like that 
 ```dax
-Month Color =
-    'Nagueu.KPI.MonthColor'()
+lperin.intervalcolor(
+    [Valeur KPI],
+    [Min KPI],
+    [Max KPI]
+)
 ```
 
 The function returns a color name that can be used to dynamically format the chart:
@@ -41,9 +62,9 @@ blue
 ## Package
 
 ```text
-Package ID: Lionel.KPI
+Package ID: lperin.intervalcolor
 Version:    1.0.0
-Function:   Lionel.KPI.MonthColor
+Function:   lperin.intervalcolor.LineColor
 ```
 
 ## Visualization
