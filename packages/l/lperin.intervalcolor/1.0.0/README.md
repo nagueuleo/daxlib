@@ -2,6 +2,9 @@
 
 **Version:** 1.0.0
 
+
+Author: [Lionel Perin](www.linkedin.com/in/lionel-perin-nagueu-7a4a1715a)
+
 A DAXLib function designed to dynamically color KPI values in **Bar Charts** and **Line Charts** based on the selected months.
 
 ## Behavior
@@ -19,7 +22,7 @@ This makes it easy to visually highlight the best and worst KPI values directly 
 Use the function as a **conditional formatting / color measure** for the chart.
 
 
-- create your measure 
+- create your measure for example 
 Valeur KPI =
 SUM('VENTES'[Montant])
 
