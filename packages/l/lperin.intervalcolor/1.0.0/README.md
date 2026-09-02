@@ -23,27 +23,27 @@ Use the function as a **conditional formatting / color measure** for the chart.
 
 
 - create your measure for example 
-Valeur KPI =
+valueKpi =
 SUM('VENTES'[Montant])
 
 - Create the minimum nad maximum like 
-if your axis is the date the make two kpi Min KPI and max KPI
-Min KPI =
+if your axis is the date the make two kpi minKpi and maxKpi
+minKpi =
 MINX(
     ALLSELECTED('DATE'[Mois]),
-    CALCULATE([Valeur KPI])
+    CALCULATE(valueKpi)
 )
-Max KPI =
+maxKpi =
 MAXX(
     ALLSELECTED('DATE'[Mois]),
-    CALCULATE([Valeur KPI])
+    CALCULATE(valueKpi)
 )
-- Call the function like that 
+- Call the function like that
 ```dax
-lperin.intervalcolor(
-    [Valeur KPI],
-    [Min KPI],
-    [Max KPI]
+lperin.intervalcolor.LineColor(
+    valueKpi,
+    minKpi,
+    maxKpi
 )
 ```
 
@@ -57,15 +57,14 @@ blue
 
 ## Dependencies
 
-* `ValueKPI`
-* `'DATE'[Année]`
-* `'DATE'[mois]`
-* `'DATE'[Mois_num]`
+* `valueKpi` — the KPI value for the current point of the axis
+* `minKpi` — the minimum of the KPI across the selected points
+* `maxKpi` — the maximum of the KPI across the selected points
 
 ## Package
 
 ```text
-Package ID: lperin.intervalcolor
+Package ID: Lperin.intervalcolor
 Version:    1.0.0
 Function:   lperin.intervalcolor.LineColor
 ```
