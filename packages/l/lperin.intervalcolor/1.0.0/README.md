@@ -1,4 +1,4 @@
-# lperin.intervalcolor.LineColor
+# Lperin.IntervalColor.LineColor
 
 **Version:** 1.0.0
 
@@ -40,7 +40,7 @@ MAXX(
 )
 - Call the function like that
 ```dax
-lperin.intervalcolor.LineColor(
+Lperin.IntervalColor.LineColor(
     valueKpi,
     minKpi,
     maxKpi
@@ -64,9 +64,9 @@ blue
 ## Package
 
 ```text
-Package ID: Lperin.intervalcolor
+Package ID: Lperin.IntervalColor
 Version:    1.0.0
-Function:   lperin.intervalcolor.LineColor
+Function:   Lperin.IntervalColor.LineColor
 ```
 
 ## Visualization
